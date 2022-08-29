@@ -1,0 +1,9 @@
+<ul>
+{% for food in foods %}
+    <a href="{% url 'foods:detail' food.pk %}">
+        <li>
+            {{ food }}
+        </li>
+    </a>
+{% endfor %}
+</ul>
