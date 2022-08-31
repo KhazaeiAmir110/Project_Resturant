@@ -114,16 +114,18 @@
 
 			<div class="row special-list">
 				{% for food in foods %}
-                    <div class="col-lg-4 col-md-6 special-grid {{ food.food_type }}">
-					<div class="gallery-single fix">
-						<img src="{{ food.photo.url }}" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>{{ food.name }}</h4>
-							<p>{{ food.description }}</p>
-							<h5> {{ food.price }} تومان </h5>
-						</div>
-					</div>
-				</div>
+                    <a href="{% url 'foods:detail' food.id %}">
+                        <div class="col-lg-4 col-md-6 special-grid {{ food.food_type }}">
+					        <div class="gallery-single fix">
+						        <img src="{{ food.photo.url }}" class="img-fluid" alt="Image">
+                                    <div class="why-text">
+							            <h4>{{ food.name }}</h4>
+							            <p>{{ food.description }}</p>
+							            <h5> {{ food.price }} تومان </h5>
+						            </div>
+					        </div>
+				        </div>
+                    </a>
 				{% endfor %}
 
 
